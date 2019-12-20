@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Form</title>
+	<style type="text/css">
+		body, html {
+			font-family: Arial, Verdana, Helvetica, sans-serif;
+			font-size: 20px;
+			line-height: 1.5;
+			margin: 0;
+			padding: 0;
+			background: url("./img/kimani_maruge.jpg") 0 -50px no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+
+		#title, #description {
+			width: 60%;
+			margin: 0 auto;
+			text-align: center;
+			background-color: dodgerblue;
+			color: #ffffff;
+			font-weight: bold;
+			padding: 20px 30px 8px;
+		}
+		form p {
+			text-align: left;
+			margin: 20px 0px 0px 0px;
+			width: auto;
+			padding-left: 0px; 
+		}
+		form {
+			width: 60%;
+			margin: 0 auto;
+			padding: 30px;
+			display: flex;
+			flex-direction: column;
+			background: #646464;
+			font-size: 18px;
+			color: #ffffff;
+		}
+
+		fieldset {
+			border-radius: 5px;
+			margin-top: 12px;
+		}
+
+		input[type="text"], input[type="email"], input[type="number"], #dropdown {
+			padding: 8px;
+			border-radius: 5px;
+		}
+		label not-first-child {
+			padding-top: 10px;
+		}
+		#email-label, #number-label {
+			margin-top: 25px
+		}
+		input[type="radio"] {
+			padding: 8px;
+			margin-top: 4px;
+		}
+		input[type="checkbox"] {
+			padding: 8px 12px;
+			margin-top: 6px;
+			width: auto;
+		}
+		textarea {
+			margin-top: 8px;
+			padding: 14px 8px;
+			border-radius: 5px;
+			min-height: 100px;
+		}
+		#dropdown {
+			width: auto;
+			margin-top: 4px;
+		}
+		#submit {
+			margin-top: 20px;
+			padding-top: 18px;
+			padding-bottom: 18px;
+			background: dodgerblue;
+			color: #ffffff;
+			font-weight: bold;
+			border: 0;
+			border-radius: 5px;
+		}
+		#submit:hover {
+			cursor: pointer;
+			background: rgba(0,0,99,0.5);
+		}
+
+		/*mobile design*/
+		@media screen and (max-width: 768px) {
+			body, html {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			#survey-form {
+				margin: 0;
+				padding: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1 id="title">
+		Survey Form
+	</h1>
+	<p id="description">
+		Fill out the form below
+	</p>
+	<form id="survey-form">
+		<label id="name-label">Name:</label>
+		<input type="text" name="name" id="name" placeholder="Enter your full name" required>
+		<label id="email-label">Email:</label>
+		<input type="email" name="email" id="email" placeholder="Enter your email" required>
+		<label id="number-label">Age:</label>
+		<input type="Number" name="number" id="number" min="16" max="100" placeholder="Enter your age" required>
+		<!--Select option -->
+		<p>Which is your home country?</p>
+			<select id="dropdown">
+				<option>Kenya</option>
+				<option>Great Britain</option>
+				<option>USA</option>
+				<option>South Africa</option>
+				<option>Canada</option>
+			</select>
+		
+		<!-- Choose radio/option -->
+		<fieldset><legend>Which is your favourite sport?</legend>
+			<input type="radio" name="name" value="Soccer" checked>Soccer <br>
+			<input type="radio" name="name" value="Athletics">Athletics<br>
+			<input type="radio" name="name" value="Other">Other<br><br>
+		</fieldset>
+		<!-- Choose from checkbox -->
+		<fieldset><legend>Which cities would you live in?</legend>
+			<input type="checkbox" name="checkbox" value="London">London, UK <br>
+			<input type="checkbox" name="checkbox" value="Nairobi">Nairobi, Kenya<br>
+			<input type="checkbox" name="checkbox" value="Warsaw">Warsaw, Poland<br>
+			<input type="checkbox" name="checkbox" value="Sidney">Sidney, Australia<br>
+			<input type="checkbox" name="checkbox" value="Windhok">Windhok, Namibia<br>
+			<input type="checkbox" name="checkbox" value="New York">New York, USA<br>
+		</fieldset>
+		<!-- Textarea for comments -->
+		<p>Do you have any comments?</p>
+		<textarea> Enter your comments here ...</textarea>
+		<!-- Submit button-->
+		<button id="submit">Submit</button>
+	</form>
+</body>
+</html>
